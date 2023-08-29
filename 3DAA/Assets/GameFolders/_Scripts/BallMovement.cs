@@ -25,7 +25,7 @@ public class BallMovement : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(4f);
-            rotateDirection = new Vector3(Random.Range(0, 2), Random.Range(0, 2), Random.Range(0, 2));    
+            rotateDirection = new Vector3(Random.Range(1, 2), Random.Range(0, 2), Random.Range(0, 2));    
         }
     }
 }
