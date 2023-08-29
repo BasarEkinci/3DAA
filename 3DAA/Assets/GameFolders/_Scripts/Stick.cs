@@ -1,12 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Stick : MonoBehaviour
 {
     [SerializeField] Transform stickSpawnPoint;
     [SerializeField] GameObject stick;
+    [SerializeField] float throwForce;
     private Rigidbody rb;
 
     private void Awake()
@@ -18,7 +16,7 @@ public class Stick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rb.AddForce(Vector3.down * (1000 * Time.deltaTime),ForceMode.Impulse);
+            rb.AddForce(Vector3.down * throwForce,ForceMode.Impulse);
         }
     }
 
@@ -28,8 +26,14 @@ public class Stick : MonoBehaviour
         {
             transform.SetParent(other.collider.transform);
             rb.velocity = Vector3.zero;
+            rb.isKinematic = true;
 
-            Instantiate(stick, stickSpawnPoint.position, transform.rotation);
+            GameManager.Instance.SpawnKnife();
+        }
+
+        if (other.gameObject.CompareTag("Stick"))
+        {
+            Debug.Log("Game Over");
         }
     }
 }
