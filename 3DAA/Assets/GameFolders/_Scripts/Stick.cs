@@ -28,8 +28,8 @@ public class Stick : MonoBehaviour
         {
             transform.SetParent(other.collider.transform);
             rb.velocity = Vector3.zero;
-            
-            
+
+            Instantiate(stick, stickSpawnPoint.position, transform.rotation);
         }
     }
 }
