@@ -11,6 +11,7 @@ public class BallMovement : MonoBehaviour
 
     private void Start()
     {
+        rotateDirection = Vector3.one;
         StartCoroutine(DirectionChangeTime());
     }
 

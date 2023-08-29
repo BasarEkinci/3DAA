@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public bool IsGameOver { get; private set; }
     public bool IsGameStarted { get; private set; }
-    
+    public int Score { get; set; }
     
     [SerializeField] GameObject stick;
     [SerializeField] Transform stickSpawnPos;

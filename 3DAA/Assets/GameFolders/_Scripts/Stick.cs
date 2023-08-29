@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Stick : MonoBehaviour
@@ -19,6 +20,7 @@ public class Stick : MonoBehaviour
             rb.AddForce(Vector3.down * throwForce,ForceMode.Impulse);
         }
     }
+    
 
     private void OnCollisionEnter(Collision other)
     {
@@ -27,7 +29,7 @@ public class Stick : MonoBehaviour
             transform.SetParent(other.collider.transform);
             rb.velocity = Vector3.zero;
             rb.isKinematic = true;
-
+            GameManager.Instance.Score++;
             GameManager.Instance.SpawnKnife();
         }
         else if (other.gameObject.CompareTag("Stick"))
