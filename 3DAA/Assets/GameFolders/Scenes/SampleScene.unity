@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 538172055}
+  gamePanel: {fileID: 0}
 --- !u!4 &126211742
 Transform:
   m_ObjectHideFlags: 0
@@ -205,7 +206,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.745283, b: 0.65138894, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.6981132, b: 0.60993046, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -885,7 +886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b600df22956961c48aa3f73df143458d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stick: {fileID: 745611862881789784, guid: d3e9dad485209034d96ddc78b8ad6f61, type: 3}
+  stick: {fileID: 8290743051642184353, guid: 531e64fdb6efd4346b958048ec0d19ad, type: 3}
   stickSpawnPos: {fileID: 1914978087}
 --- !u!4 &1910347153
 Transform:
@@ -929,7 +930,7 @@ PrefabInstance:
     - target: {fileID: 2651294828439730574, guid: a80eb927cfb1d7d4f9c3b5485b79868e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 4.01
       objectReference: {fileID: 0}
     - target: {fileID: 2651294828439730574, guid: a80eb927cfb1d7d4f9c3b5485b79868e,
         type: 3}
@@ -1007,7 +1008,7 @@ PrefabInstance:
     - target: {fileID: 5460352806995949627, guid: 0c2dd68c978475e4ea61d6be003fe6c1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.99
       objectReference: {fileID: 0}
     - target: {fileID: 5460352806995949627, guid: 0c2dd68c978475e4ea61d6be003fe6c1,
         type: 3}

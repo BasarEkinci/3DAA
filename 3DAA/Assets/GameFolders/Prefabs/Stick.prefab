@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 477664810425841420}
   - component: {fileID: 7413339768171170115}
   - component: {fileID: 4515468992864989653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stick
   m_TagString: Stick
   m_Icon: {fileID: 0}
@@ -121,9 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ae22de5d07b6e49aac318aaaf8b59b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stickSpawnPoint: {fileID: 2651294828439730574, guid: a80eb927cfb1d7d4f9c3b5485b79868e,
-    type: 3}
-  stick: {fileID: 745611862881789784}
   throwForce: 50
 --- !u!54 &4515468992864989653
 Rigidbody:
