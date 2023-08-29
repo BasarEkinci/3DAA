@@ -30,8 +30,7 @@ public class Stick : MonoBehaviour
 
             GameManager.Instance.SpawnKnife();
         }
-
-        if (other.gameObject.CompareTag("Stick"))
+        else if (other.gameObject.CompareTag("Stick"))
         {
             Debug.Log("Game Over");
         }
