@@ -12,15 +12,19 @@ public class BallMovement : MonoBehaviour
     private void Start()
     {
         rotateDirection = Vector3.one;
-        StartCoroutine(DirectionChangeTime());
+        StartCoroutine(DirectionChangeTimeAsync());
     }
 
     private void Update()
     {
         transform.Rotate(rotateDirection,rotateSpeed * Time.deltaTime);
+        if (GameManager.Instance.IsGameOver && rotateSpeed > 0)
+        {
+            rotateSpeed -= 40f * Time.deltaTime;
+        }
     }
 
-    IEnumerator DirectionChangeTime()
+    IEnumerator DirectionChangeTimeAsync()
     {
         while (true)
         {
@@ -28,4 +32,6 @@ public class BallMovement : MonoBehaviour
             rotateDirection = new Vector3(Random.Range(1, 2), Random.Range(0, 2), Random.Range(0, 2));    
         }
     }
+
+
 }

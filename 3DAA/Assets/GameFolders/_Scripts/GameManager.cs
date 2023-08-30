@@ -18,9 +18,11 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+
     private void Start()
     {
         SpawnKnife();
+        IsGameStarted = false;
     }
 
     public void SpawnKnife()

@@ -14,8 +14,8 @@ public class Stick : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !GameManager.Instance.IsGameOver)
-        {
+        if (Input.GetKeyDown(KeyCode.Space) && !GameManager.Instance.IsGameOver)
+        { 
             rb.AddForce(Vector3.forward * throwForce,ForceMode.Impulse);
         }
     }
