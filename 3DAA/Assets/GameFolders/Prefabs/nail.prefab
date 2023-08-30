@@ -147,6 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ae22de5d07b6e49aac318aaaf8b59b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 50
+  throwForce: 100
   stuckEffect: {fileID: 5640205381364822590, guid: dcafd9507c733844c808181012997582,
     type: 3}

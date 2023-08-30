@@ -18,9 +18,9 @@ public class BallMovement : MonoBehaviour
     private void Update()
     {
         transform.Rotate(rotateDirection,rotateSpeed * Time.deltaTime);
-        if (GameManager.Instance.IsGameOver && rotateSpeed > 0)
+        if (GameManager.Instance.IsGameOver && rotateSpeed > 0f)
         {
-            rotateSpeed -= 40f * Time.deltaTime;
+            rotateSpeed -= 40 * Time.deltaTime;
         }
     }
 

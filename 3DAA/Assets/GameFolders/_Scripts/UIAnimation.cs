@@ -6,9 +6,18 @@ using UnityEngine;
 public class UIAnimation : MonoBehaviour
 {
     [SerializeField] TMP_Text startText;
+    [SerializeField] TMP_Text scoreText;
 
     private void Start()
     {
         startText.transform.DOScale(Vector3.one * 1.1f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !GameManager.Instance.IsGameOver)
+        {
+            scoreText.transform.DOScale(Vector3.one * 1.1f, 0.2f).SetEase(Ease.Linear).From();
+        }
     }
 }
