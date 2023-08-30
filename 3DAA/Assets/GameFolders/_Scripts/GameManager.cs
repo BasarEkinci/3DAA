@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public bool IsGameOver { get; private set; }
+    public bool IsGameOver { get;  set; }
     public bool IsGameStarted { get; private set; }
     public int Score { get; set; }
     
@@ -26,11 +26,6 @@ public class GameManager : MonoBehaviour
     public void SpawnKnife()
     {
         Instantiate(stick, stickSpawnPos.position, stickSpawnPos.transform.rotation);
-    }
-
-    public void GameOver()
-    {
-        IsGameOver = true;
     }
 
     public void RestartGame()

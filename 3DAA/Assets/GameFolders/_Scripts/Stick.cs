@@ -14,7 +14,7 @@ public class Stick : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GameManager.Instance.IsGameOver)
         {
             rb.AddForce(Vector3.forward * throwForce,ForceMode.Impulse);
         }
@@ -34,7 +34,7 @@ public class Stick : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Stick"))
         {
-            Debug.Log("Game Over");
+            GameManager.Instance.IsGameOver = true;
         }
     }
 }
