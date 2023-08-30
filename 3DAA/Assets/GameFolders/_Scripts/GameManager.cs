@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     public void SpawnKnife()
     {
-        Instantiate(stick, stickSpawnPos.position, Quaternion.identity);
+        Instantiate(stick, stickSpawnPos.position, stickSpawnPos.transform.rotation);
     }
 
     public void GameOver()

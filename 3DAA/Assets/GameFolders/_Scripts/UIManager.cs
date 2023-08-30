@@ -8,6 +8,6 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        scoreText.text = GameManager.Instance.Score.ToString();
+        scoreText.text ="Score\n" + GameManager.Instance.Score;
     }
 }

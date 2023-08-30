@@ -16,7 +16,7 @@ public class Stick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rb.AddForce(Vector3.down * throwForce,ForceMode.Impulse);
+            rb.AddForce(Vector3.forward * throwForce,ForceMode.Impulse);
         }
     }
 
@@ -26,10 +26,10 @@ public class Stick : MonoBehaviour
         {
             transform.SetParent(other.collider.transform);
             rb.velocity = Vector3.zero;
-            transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.5f);
             rb.isKinematic = true;
             GameManager.Instance.Score++;
-            Instantiate(stuckEffect, new Vector3(0,-0.702f,1.44f), Quaternion.identity);
+            Instantiate(stuckEffect, new Vector3(0,-1.88f,2f), Quaternion.identity);
             GameManager.Instance.SpawnKnife();
         }
         else if (other.gameObject.CompareTag("Stick"))
