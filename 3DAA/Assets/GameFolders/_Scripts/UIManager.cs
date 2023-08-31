@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -8,6 +7,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text startText;
     [SerializeField] TMP_Text highScoreText;
     [SerializeField] GameObject resartButton;
+    [SerializeField] GameObject creditButton;
     private void Update()
     {
 
@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
         if (GameManager.Instance.IsGameOver)
         {
             resartButton.SetActive(true);
+            creditButton.SetActive(true);
         }
     }
 
@@ -30,5 +31,11 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.RestartGame();
         resartButton.SetActive(false);
+        creditButton.SetActive(false);
+    }
+
+    public void CreditButton()
+    {
+        Application.OpenURL("https://linktr.ee/basarekinci");
     }
 }

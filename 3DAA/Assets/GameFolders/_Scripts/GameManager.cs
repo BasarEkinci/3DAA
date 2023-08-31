@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,7 +12,7 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] GameObject stick;
     [SerializeField] Transform stickSpawnPos;
-    
+
     private void Awake()
     {
         if(Instance == null)
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore",HighScore);
             PlayerPrefs.Save();
         }
+        HighScore = PlayerPrefs.GetInt("HighScore");
     }
     public void SpawnKnife()
     {
@@ -43,4 +45,5 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
         Score = 0;
     }
+    
 }
