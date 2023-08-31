@@ -21,6 +21,8 @@ public class Stick : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        if(GameManager.Instance.IsGameOver) return;
+        
         if (other.gameObject.CompareTag("Ball"))
         {
             transform.SetParent(other.collider.transform);
@@ -34,6 +36,9 @@ public class Stick : MonoBehaviour
         else if (other.gameObject.CompareTag("Stick"))
         {
             GameManager.Instance.IsGameOver = true;
+            rb.useGravity = true;
+            rb.freezeRotation = false;
+            rb.isKinematic = false;
         }
     }
 }
