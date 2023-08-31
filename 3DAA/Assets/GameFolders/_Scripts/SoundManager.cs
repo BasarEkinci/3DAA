@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance { get; private set; }
     
     private AudioSource audioSource;
-    [SerializeField] AudioClip stuckSoundEffect;
+    [SerializeField] List<AudioClip> stuckSoundEffects;
 
     private void Awake()
     {
@@ -22,8 +22,8 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public void PlaySoundEffect()
+    public void PlaySoundEffect(int index)
     {
-        audioSource.PlayOneShot(stuckSoundEffect);
+        audioSource.PlayOneShot(stuckSoundEffects[index]);
     }
 }
