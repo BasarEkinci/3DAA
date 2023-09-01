@@ -18,7 +18,7 @@ public class Stick : MonoBehaviour
             rb.AddForce(Vector3.forward * throwForce,ForceMode.Impulse);
         }
     }
-
+    
     private void OnCollisionEnter(Collision other)
     {
         if(GameManager.Instance.IsGameOver) return;

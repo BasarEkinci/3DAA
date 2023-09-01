@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    
+    [SerializeField] GameObject stick;
+    [SerializeField] Transform stickSpawnPos;
+    
     public bool IsGameOver { get;  set; }
     public int Score { get; set; }
     public int HighScore { get; private set; }
     
-    [SerializeField] GameObject stick;
-    [SerializeField] Transform stickSpawnPos;
-
     private void Awake()
     {
         if(Instance == null)

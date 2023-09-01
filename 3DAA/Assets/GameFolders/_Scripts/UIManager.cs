@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text highScoreText;
     [SerializeField] GameObject resartButton;
     [SerializeField] GameObject creditButton;
+    
     private void Update()
     {
 
@@ -26,14 +27,14 @@ public class UIManager : MonoBehaviour
             creditButton.SetActive(true);
         }
     }
-
+    
     public void RestartButton()
     {
         GameManager.Instance.RestartGame();
         resartButton.SetActive(false);
         creditButton.SetActive(false);
     }
-
+    
     public void CreditButton()
     {
         Application.OpenURL("https://linktr.ee/basarekinci");

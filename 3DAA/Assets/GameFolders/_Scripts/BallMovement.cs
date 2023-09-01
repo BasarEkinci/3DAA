@@ -7,7 +7,6 @@ public class BallMovement : MonoBehaviour
     [SerializeField] float rotateSpeed;
     private Vector3 rotateDirection;
 
-
     private void Start()
     {
         rotateDirection = Vector3.one;
@@ -31,6 +30,4 @@ public class BallMovement : MonoBehaviour
             rotateDirection = new Vector3(Random.Range(1, 2), Random.Range(0, 2), Random.Range(0, 2));    
         }
     }
-
-
 }

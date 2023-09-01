@@ -7,9 +7,10 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
     
-    private AudioSource audioSource;
     [SerializeField] List<AudioClip> stuckSoundEffects;
-
+    
+    private AudioSource audioSource;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -20,8 +21,7 @@ public class SoundManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
-
-
+    
     public void PlaySoundEffect(int index)
     {
         audioSource.PlayOneShot(stuckSoundEffects[index]);
