@@ -1,5 +1,3 @@
-using DG.Tweening;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +11,10 @@ public class GameManager : MonoBehaviour
     public bool IsGameOver { get;  set; }
     public int Score { get; set; }
     public int HighScore { get; private set; }
+    public int GameCount;
+
+    private string gameCount = "Game Count";
+    private string highScore = "High Score";
     
     private void Awake()
     {
@@ -27,14 +29,21 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        SetHighScore();
+    }
+
+    private void SetHighScore()
+    {
         if (Score > HighScore)
         {
             HighScore = Score;
-            PlayerPrefs.SetInt("HighScore",HighScore);
+            PlayerPrefs.SetInt(highScore,HighScore);
             PlayerPrefs.Save();
         }
-        HighScore = PlayerPrefs.GetInt("HighScore");
+        HighScore = PlayerPrefs.GetInt(highScore);
+        GameCount = PlayerPrefs.GetInt(gameCount);
     }
+    
     public void SpawnKnife()
     {
         Instantiate(stick, stickSpawnPos.position, stickSpawnPos.transform.rotation);
@@ -43,6 +52,9 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         IsGameOver = false;
+        GameCount++;
+        PlayerPrefs.SetInt(gameCount,GameCount);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(0);
         Score = 0;
     }

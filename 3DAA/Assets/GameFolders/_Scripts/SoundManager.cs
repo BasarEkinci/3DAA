@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,13 +13,9 @@ public class SoundManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-    }
-
-    private void Start()
-    {
+        
         audioSource = GetComponent<AudioSource>();
     }
-    
     public void PlaySoundEffect(int index)
     {
         audioSource.PlayOneShot(stuckSoundEffects[index]);
