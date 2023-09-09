@@ -4,9 +4,8 @@ using Random = UnityEngine.Random;
 
 public class BallMovement : MonoBehaviour
 {
-    [SerializeField] float rotateSpeed;
+    private float rotateSpeed = 120f;
     private Vector3 rotateDirection;
-
     private void Start()
     {
         rotateDirection = Vector3.one;
@@ -15,12 +14,17 @@ public class BallMovement : MonoBehaviour
 
     private void Update()
     {
-        transform.Rotate(rotateDirection,rotateSpeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+            rotateSpeed = 180f;
+        else if (Input.GetKey(KeyCode.LeftControl))
+            rotateSpeed = 75f;
+        else
+            rotateSpeed = 120f;
+        
         if (GameManager.Instance.IsGameOver && rotateSpeed > 0f)
-        {
-            rotateSpeed -= 40 * Time.deltaTime;
-        }
-        Debug.Log(rotateDirection);
+            rotateSpeed -= Time.deltaTime;
+        transform.Rotate(rotateDirection,rotateSpeed * Time.deltaTime);
+        
     }
 
     IEnumerator DirectionChangeTimeAsync()
