@@ -14,17 +14,20 @@ public class BallMovement : MonoBehaviour
 
     private void Update()
     {
+        ChangeSpeed();
+        if (GameManager.Instance.IsGameOver && rotateSpeed > 0f)
+            rotateSpeed -= Time.deltaTime;
+        transform.Rotate(rotateDirection,rotateSpeed * Time.deltaTime);
+    }
+
+    private void ChangeSpeed()
+    {
         if (Input.GetKey(KeyCode.LeftShift))
             rotateSpeed = 180f;
         else if (Input.GetKey(KeyCode.LeftControl))
             rotateSpeed = 75f;
         else
             rotateSpeed = 120f;
-        
-        if (GameManager.Instance.IsGameOver && rotateSpeed > 0f)
-            rotateSpeed -= Time.deltaTime;
-        transform.Rotate(rotateDirection,rotateSpeed * Time.deltaTime);
-        
     }
 
     IEnumerator DirectionChangeTimeAsync()
