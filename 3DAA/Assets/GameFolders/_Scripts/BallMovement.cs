@@ -20,6 +20,7 @@ public class BallMovement : MonoBehaviour
         {
             rotateSpeed -= 40 * Time.deltaTime;
         }
+        Debug.Log(rotateDirection);
     }
 
     IEnumerator DirectionChangeTimeAsync()
@@ -27,7 +28,7 @@ public class BallMovement : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(4f);
-            rotateDirection = new Vector3(Random.Range(1, 2), Random.Range(0, 2), Random.Range(0, 2));    
+            rotateDirection = new Vector3(Random.Range(1, 4), Random.Range(0, 4), Random.Range(0, 4));    
         }
     }
 }
